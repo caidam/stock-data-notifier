@@ -1,0 +1,1 @@
+*/5 * * * * /path/to/your/repo/cronjob.sh
