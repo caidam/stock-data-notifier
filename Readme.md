@@ -1,6 +1,6 @@
 # Stock Data Notifier
 
-This project fetches stock market data for specified symbols using the RealStonks API, stores the data in a DataFrame, and sends email notifications with the latest stock data.
+This project fetches stock market data for specified symbols using the RealStonks API, stores the data in a DataFrame, and sends email notifications with the latest stock data. All of this automated by a cron job.
 
 ## Project Structure
 
