@@ -62,7 +62,15 @@ Feel free to modify the stock symbols, frequency of data fetching, and other con
 
 > ## How to set up a Cron Job
 
-### Step 1: Open the Crontab Configuration
+### Step 1: Make the Script Executable:
+
+You may need to ensure that the script has executable permissions. You can make your script executable using the chmod command:
+
+```bash
+    chmod +x path/to/your/repo/yourfile.py
+```
+
+### Step 2: Open the Crontab Configuration
 
 Open the crontab configuration by running the following command in your terminal:
 
@@ -72,7 +80,7 @@ Open the crontab configuration by running the following command in your terminal
 
 This will open the default text editor for editing the crontab file.
 
-### Step 2: Add the Cron Job Entry
+### Step 3: Add the Cron Job Entry
 
 Add a new line to the crontab file for the desired scheduling of the `main.py` script. The general format for a cron job entry is as follows:
 
@@ -90,15 +98,26 @@ Add a new line to the crontab file for the desired scheduling of the `main.py` s
 For example, to run the main.py script every 5 minutes, add the following line:
 
 ```bash
-    */5 * * * * python /path/to/your/repo/main.py
+    */5 * * * * /usr/bin/python3 /path/to/your/repo/script_or_command
 ```
 
 Replace `/path/to/your/repo` with the actual path to the directory containing the `main.py` script.
+Similarly replace `/usr/bin/python3` with the actual path to the python 3 interpreter on your machine.
 
-### Step 3: Save and Exit
+### Step 4: Redirect Errors to a Log File:
+
+In your cron job, you can redirect both the standard output and standard error to a log file to capture any error messages:
+
+```bash
+    */5 * * * /usr/bin/python3 /home/constant/Documents/quests/chartbrewdata/stock-data-notifier/test.py >> /path/to/your/logfile 2>&1
+```
+
+This way, any error messages will be written to the log file, making it easier to diagnose any issue.
+
+### Step 5: Save and Exit
 
 Save the crontab file and exit the text editor. The changes will take effect immediately.
 
 Now, the `main.py` script will be executed every 5 minutes based on the specified cron job configuration.
 
-Feel free to adjust the timing and frequency of the cron job according to your requirements.
+You can adjust the timing and frequency of the cron job according to your requirements.
