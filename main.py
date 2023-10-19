@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import requests
 import pandas as pd
 import datetime
@@ -91,7 +93,7 @@ def send_mail(df):
 def fetch_and_notify_stock_data(df, symbols):
     """
     Main function to continuously fetch stock market data for specified symbols
-    and send email notifications with the latest data.
+    and send email notifications with the latest data. Stores data in a csv file.
 
     Returns:
         None
