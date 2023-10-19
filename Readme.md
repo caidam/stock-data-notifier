@@ -109,7 +109,9 @@ Similarly replace `/usr/bin/python3` with the actual path to the python 3 interp
 In your cron job, you can redirect both the standard output and standard error to a log file to capture any error messages:
 
 ```bash
-    */5 * * * /usr/bin/python3 /home/constant/Documents/quests/chartbrewdata/stock-data-notifier/test.py >> /path/to/your/logfile 2>&1
+    */5 * * * /usr/bin/python3 \
+    /home/constant/Documents/quests/chartbrewdata/stock-data-notifier/test.py \
+    >> /path/to/your/logfile 2>&1
 ```
 
 This way, any error messages will be written to the log file, making it easier to diagnose any issue.
